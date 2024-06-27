@@ -23,13 +23,14 @@ Paragraph default: 1.6
 - Primary: #e67e22
 - Tints: #fdf2e9
 - Shades: #cf711f
-- Accents:
+- Accents: #45260a
 - Greys:
 #6f6f6f (Lightest grey allowed on #fdf2e9)
 #555
 #333
 
 ---- 03 Shadows
+box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 ---- 04 Border Radius
 Default: 9px
@@ -89,6 +90,10 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .grid--center-v {
   align-items: center;
 }
@@ -129,6 +134,7 @@ body {
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -137,6 +143,11 @@ body {
   font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+
+  /* only btn class */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 
   transition: all 0.3s;
 }
@@ -162,6 +173,18 @@ body {
 .btn--outline:active {
   background-color: #fdf2e9;
   box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: flex-end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
 }
 
 .link:link,
@@ -200,6 +223,13 @@ body {
   width: 3rem;
   height: 3rem;
   color: #e67e22;
+}
+
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22;
+  outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
 }
 
 /* Helper Classes */
